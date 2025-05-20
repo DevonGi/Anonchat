@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "framework": "vite",
+  "functions": {
+    "api/*.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    { "source": "/ws", "destination": "/api/websocket" },
+    { "source": "/api/(.*)", "destination": "/api/$1" }
+  ]
+}
